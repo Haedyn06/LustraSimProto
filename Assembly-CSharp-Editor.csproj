@@ -61,21 +61,7 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.46f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\NatureStarterKit2\Editor\ImageEffects\CameraMotionBlurEditor.cs" />
-    <Compile Include="Assets\NatureStarterKit2\Editor\ImageEffects\ColorCorrectionLookupEditor.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Editor\ReadmeEditor.cs" />
-    <Compile Include="Assets\NatureStarterKit2\Editor\ImageEffects\SunShaftsEditor.cs" />
-    <Compile Include="Assets\NatureStarterKit2\Editor\ImageEffects\VignetteAndChromaticAberrationEditor.cs" />
-    <Compile Include="Assets\NatureStarterKit2\Editor\ImageEffects\ColorCorrectionCurvesEditor.cs" />
-    <Compile Include="Assets\NatureStarterKit2\Editor\ImageEffects\BloomAndFlaresEditor.cs" />
-    <Compile Include="Assets\NatureStarterKit2\Editor\ImageEffects\DepthOfFieldEditor.cs" />
-    <Compile Include="Assets\NatureStarterKit2\Editor\ImageEffects\BloomEditor.cs" />
-    <Compile Include="Assets\NatureStarterKit2\Editor\ImageEffects\TonemappingEditor.cs" />
-    <Compile Include="Assets\NatureStarterKit2\Editor\ImageEffects\NoiseAndGrainEditor.cs" />
-    <Compile Include="Assets\NatureStarterKit2\Editor\ImageEffects\CreaseShadingEditor.cs" />
-    <Compile Include="Assets\NatureStarterKit2\Editor\ImageEffects\EdgeDetectionEditor.cs" />
-    <Compile Include="Assets\NatureStarterKit2\Editor\ImageEffects\AntialiasingEditor.cs" />
-    <Compile Include="Assets\NatureStarterKit2\Editor\ImageEffects\DepthOfFieldDeprecatedEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -1339,6 +1325,22 @@
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{AD3E3AE2-2522-11BD-5FD8-1EA8159DEFDC}</Project>
       <Name>Assembly-CSharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="VRM10.csproj">
+      <Project>{78769EBD-53E5-C4CA-19A4-CCF84E1331D8}</Project>
+      <Name>VRM10</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniGLTF.csproj">
+      <Project>{F7A83ADC-CBF4-69FD-8647-007AA710A8E0}</Project>
+      <Name>UniGLTF</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniHumanoid.csproj">
+      <Project>{0C7F9500-4A3D-AEFB-BD0B-4BDA45E6F2DA}</Project>
+      <Name>UniHumanoid</Name>
+    </ProjectReference>
+    <ProjectReference Include="SpringBoneJobs.csproj">
+      <Project>{84DAD67F-D732-FE1F-4382-4BECBF11CB71}</Project>
+      <Name>SpringBoneJobs</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
