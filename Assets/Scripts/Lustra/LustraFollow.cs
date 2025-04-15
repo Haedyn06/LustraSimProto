@@ -4,8 +4,8 @@ using static UnityEngine.GraphicsBuffer;
 public class LustraFollow : MonoBehaviour
 {
     public Transform target;     // Drag your player/camera here
-    public float speed = 3f;     // Walk speed
-    public float followDistance = 2f;  // How close she should get
+    public float speed = 2f;     // Walk speed
+    public float followDistance = 5f;  // How close she should get
     public Animator anim;
     void Update() {
         if (target == null) return;
