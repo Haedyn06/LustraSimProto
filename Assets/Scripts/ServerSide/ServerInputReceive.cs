@@ -39,7 +39,7 @@ public class ServerInputReceive : MonoBehaviour {
 
     void Update() {
         if (!string.IsNullOrEmpty(receivedMsg)) {
-            dialogueScript.displayResponse(receivedMsg);
+            dialogueScript.displayResponse(receivedMsg + " <Space to Close>");
             receivedMsg = null;
         }
     }

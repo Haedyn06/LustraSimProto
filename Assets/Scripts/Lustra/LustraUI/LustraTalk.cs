@@ -20,6 +20,7 @@ public class LustraTalk : MonoBehaviour
     //Input Submission Mqtt Server Comm 
     void Update() {
         if (activeUserInp && Input.GetKeyDown(KeyCode.Return)) SubmitInput();
+        if (activeUserInp && Input.GetKeyDown(KeyCode.Escape)) ToggleUserInput();
     }
     public void ToggleUserInput() {
         activeUserInp = !activeUserInp;
@@ -53,7 +54,7 @@ public class LustraTalk : MonoBehaviour
         toggleUIScript.ToggleDialogueUI(true);
         toggleUIScript.ToggleUIPanel(false);
         toggleUIScript.ToggleButtonUI(false);
-        dialogueScript.displayResponse("Lustra is responding..");
+        dialogueScript.displayResponse("Lustra is responding.. <Space to exit>");
         //Lustra  Think Expression
         //StartTypewriter("Hi my dear master! I have not seen you in for so long want to spend time with me? Talk a bit longer.. See what this place can offer?");
     }
