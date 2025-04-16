@@ -7,28 +7,24 @@ public class LustraExpression : MonoBehaviour
 
     public Vrm10Instance lustra;
     void Start() {
-        //StartCoroutine(BlinkAndSmileLoop());
-        var happyKey = ExpressionKey.CreateFromPreset(ExpressionPreset.happy);
-        lustra.Runtime.Expression.SetWeight(happyKey, 1f);
+        StartCoroutine(BlinkAndSmileLoop());
     }
 
-    //IEnumerator BlinkAndSmileLoop() {
-    //    var blinkKey = ExpressionKey.CreateFromPreset(ExpressionPreset.blink);
-    //    var happyKey = ExpressionKey.CreateFromPreset(ExpressionPreset.happy);
-
-    //    while (true) {
-    //        // Trigger blink
-    //        lustra.Runtime.Expression.SetWeight(blinkKey, 1f);
-    //        yield return new WaitForSeconds(0.1f);
-    //        lustra.Runtime.Expression.SetWeight(blinkKey, 0f);
-
-    //        // Trigger smile
-    //        lustra.Runtime.Expression.SetWeight(happyKey, 1f);
-    //        yield return new WaitForSeconds(Random.Range(1.5f, 3f));
-    //        lustra.Runtime.Expression.SetWeight(happyKey, 0f);
-
-    //        // Wait a bit before next cycle
-    //        yield return new WaitForSeconds(Random.Range(1f, 3f));
-    //    }
-    //}
+    IEnumerator BlinkAndSmileLoop() {
+        var happyKey = ExpressionKey.CreateFromPreset(ExpressionPreset.happy);
+        var blinkKey = ExpressionKey.CreateFromPreset(ExpressionPreset.blink);
+        //var blinkLKey = ExpressionKey.CreateFromPreset(ExpressionPreset.blinkLeft);
+        //var blinkRKey = ExpressionKey.CreateFromPreset(ExpressionPreset.blinkRight);
+        lustra.Runtime.Expression.SetWeight(happyKey, 1f);
+        while (true) {
+            //lustra.Runtime.Expression.SetWeight(blinkRKey, 1f);
+            //lustra.Runtime.Expression.SetWeight(blinkLKey, 1f);
+            lustra.Runtime.Expression.SetWeight(blinkKey, 1f);
+            yield return new WaitForSeconds(0.4f);
+            //lustra.Runtime.Expression.SetWeight(blinkRKey, 0f);
+            //lustra.Runtime.Expression.SetWeight(blinkLKey, 0f);
+            lustra.Runtime.Expression.SetWeight(blinkKey, 0f);
+            yield return new WaitForSeconds(Random.Range(4f, 12f));
+        }
+    }
 }

@@ -12,7 +12,7 @@ public class LustraTalk : MonoBehaviour
     public LustraFollow lustraFollowScript;
     public ServerInputSend ServerSendScript;
     public LustraControlPanel toggleUIScript;
-    public MonoBehaviour movementScript, interactionScript;
+    public TogglePlayerInter togglePlayaInterScript;
     public GameObject UserInputUI;
     public TMP_InputField inputField;
     private bool activeUserInp = false;
@@ -28,20 +28,11 @@ public class LustraTalk : MonoBehaviour
 
         if (activeUserInp) {
             //Disable Player Movement
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            movementScript.enabled = false;
-            interactionScript.enabled = false;
-
-            //Activate Input Field
+            togglePlayaInterScript.SetScreenLock(true);
             inputField.ActivateInputField();
             EventSystem.current.SetSelectedGameObject(inputField.gameObject);
         } else {
-            //Enable Player Movement
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-            movementScript.enabled = true;
-            interactionScript.enabled = true;
+            togglePlayaInterScript.SetScreenLock(false);
         }
     }
 
