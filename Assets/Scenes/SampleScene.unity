@@ -2529,8 +2529,7 @@ MonoBehaviour:
   lustraFollowScript: {fileID: 997676464}
   ServerSendScript: {fileID: 614431189}
   toggleUIScript: {fileID: 158108411}
-  movementScript: {fileID: 1609099042}
-  interactionScript: {fileID: 2027132482}
+  togglePlayaInterScript: {fileID: 1609099050}
   UserInputUI: {fileID: 202139650}
   inputField: {fileID: 202139652}
 --- !u!114 &158108409
@@ -11281,7 +11280,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.13726425
   m_Height: 0.7437471
@@ -11304,7 +11303,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.16729736
   m_Height: 0.6306009
@@ -11327,7 +11326,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.2321291
   m_Height: 0.6591661
@@ -11350,7 +11349,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.32723856, y: 0.100530505, z: 0.69415283}
   m_Center: {x: 0.002648592, y: -0.9189035, z: -0.00756073}
@@ -18629,6 +18628,8 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 8
+  enableMovement: 1
+  enableMouse: 1
 --- !u!4 &1609099043
 Transform:
   m_ObjectHideFlags: 0
@@ -18690,7 +18691,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.17270821
   m_Height: 1.32334
@@ -18713,7 +18714,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.21990919
   m_Height: 0.65473294
@@ -18736,7 +18737,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.2431359
   m_Height: 0.71381354
@@ -18759,7 +18760,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.31538263, y: 0.13193822, z: 0.3367443}
   m_Center: {x: 0.0031403154, y: -0.84413147, z: 0.026558876}
@@ -18776,8 +18777,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lustraFollowScript: {fileID: 997676464}
-  movementScript: {fileID: 1609099042}
   interactionScript: {fileID: 2027132482}
+  movementScript: {fileID: 1609099042}
 --- !u!1 &1623047723
 GameObject:
   m_ObjectHideFlags: 0
@@ -24520,7 +24521,7 @@ Transform:
   m_GameObject: {fileID: 2027132480}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0108, y: 1.5639, z: 0.071}
+  m_LocalPosition: {x: 0.003, y: 1.5525, z: -0.032}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -26558,6 +26559,7 @@ GameObject:
   - component: {fileID: 9032368446377078550}
   - component: {fileID: 2893708109969475432}
   - component: {fileID: 3450688286751893814}
+  - component: {fileID: 9032368446377078551}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -27717,7 +27719,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2189357113309224344}
   - component: {fileID: 6576852882564951613}
-  - component: {fileID: 6576852882564951614}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -48174,28 +48175,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0, y: 0.86976564, z: -0.033507362}
     m_Extent: {x: 0.77788085, y: 0.8742907, z: 0.23874666}
   m_DirtyAABB: 0
---- !u!64 &6576852882564951614
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 617886224510125513}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!114 &6578275692650573389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50930,6 +50909,7 @@ GameObject:
   - component: {fileID: 4925925850980605093}
   - component: {fileID: 7495358342582411933}
   - component: {fileID: 7495358342582411934}
+  - component: {fileID: 7495358342582411935}
   m_Layer: 2
   m_Name: ProtoLustra
   m_TagString: Untagged
@@ -50971,6 +50951,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lustra: {fileID: 4925925850980605093}
+--- !u!64 &7495358342582411935
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7495358342582411932}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3046009429776454734, guid: 125224cf4883bd64e9b35958810736f1, type: 3}
 --- !u!114 &7513389727347267358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56056,6 +56058,28 @@ MonoBehaviour:
   m_RightLittleProximal: {fileID: 4476047648693146743}
   m_RightLittleIntermediate: {fileID: 5667471493765609639}
   m_RightLittleDistal: {fileID: 4818355827818211893}
+--- !u!64 &9032368446377078551
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 269078481089648399}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3046009429776454734, guid: 125224cf4883bd64e9b35958810736f1, type: 3}
 --- !u!114 &9036076659521542337
 MonoBehaviour:
   m_ObjectHideFlags: 0

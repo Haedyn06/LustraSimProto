@@ -3,13 +3,15 @@ using System.Text;
 using System.Threading.Tasks;
 using MQTTnet;
 using MQTTnet.Client;
+using System.Collections.Generic;
+using Newtonsoft.Json;
 
 public class ServerInputReceive : MonoBehaviour {
     private IMqttClient mqttClient;
     public LustraDialogue dialogueScript;
     public LustraFollow lustraFollowScript;
     public LustraControlPanel toggleUIScript;
-
+    public ResponsePackage chatlogPack;
     private string receivedMsg = null;
 
     async void Start() {
@@ -26,9 +28,10 @@ public class ServerInputReceive : MonoBehaviour {
             //Debug.Log($"Topic: '{topic}'; Message: {msgResponse}");
 
             if (topic == "lustrasim/lustratalk/response") {
-                receivedMsg = msgResponse;
+                List<ResponsePackage> chatlogList = JsonConvert.DeserializeObject<List<ResponsePackage>>(msgResponse);
+                chatlogPack = chatlogList[0];
+                receivedMsg = chatlogPack.response;
                 toggleUIScript.ToggleDialogueUI(true);
-                //Lustra
             }
 
             return Task.CompletedTask;
